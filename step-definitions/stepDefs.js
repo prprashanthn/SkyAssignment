@@ -1,5 +1,9 @@
 import clickLink from '../app'
-//import verifyPasswordtext from '../app'
+import verifyPrices from '../app'
+import verifyPasswordtext from '../app'
+import searchKeyword from '../app'
+import verifyEditorial from '../app'
+
 const { client } = require('nightwatch-api');
 const { Given, Then, When } = require('@cucumber/cucumber');
 //const driver = new Builder().forBrowser("chrome").build;
@@ -27,7 +31,7 @@ When('User clicks on {string}', function (string) {
 });
 
   When('User clicks on {string}', function (Deals) {
-    clickLink(Deals);
+   // clickLink(Deals);
     //await driver.findElement(By.xpath("(//*[contains(text(),'Deals')])[2]")).click();
    //await driver.findElement(By.xpath("//*[@id='deals-filter']/button[1]")).click();
     //function waitFiveSeconds() {
@@ -58,15 +62,16 @@ When('User clicks on {string}', function (string) {
 
   Then('User should be displayed with list of deals and prices \"([^\"]*)\"', function (string) {
     // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    //verifyPrices(str);
   });
+
 
   When('User search \"([^\"]*)\" in the search bar', function (string) {
     // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+   // searchKeyword(str);
   });
 
   Then('User should be displayed with the editorial section', function () {
     // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+  //  verifyEditorial();
   });

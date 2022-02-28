@@ -44,3 +44,18 @@ export default async function clickLink(locator, timeout){
    // Assertion using nodejs
     assert.strictEqual(currentUrl,'https://www.sky.com/deals');
    }
+
+   export default async function searchKeyword(str){
+    await driver.findElement(By.xpath("//button[@id='masthead-search-toggle']")).click();
+    await driver.findElement(By.xpath("//div[@class='search-input-wrapper svelte-qt23dd']/input")).sendKeys(str);
+    
+ }
+
+ export default async function verifyEditorial(){
+    await driver.switchTo().frame(5);
+    var editSection = await driver.findElement(By.xpath("//a[contains(text(),'Sky offers')]")).getText();
+    var title =await driver.getTitle();
+    console.log(title)
+    //Assertion using nodejs
+    assert.strictEqual(tittle, 'Sky offers');
+ }
